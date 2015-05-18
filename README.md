@@ -8,7 +8,7 @@ A RESTful wrapper for namesystem/blockstore. Allows blockstore operations via HT
 
 ## Installation & running
 - Clone the repo
-- Run `bundler install` to install gem dependencies
+- In the project root, run `bundler install` to install gem dependencies
 - Once dependencies installed, run `rackup` to start the rack web server (will start on localhost:9000 by default)
 
 ## Authentication
