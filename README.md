@@ -1,12 +1,12 @@
 # blockstore-bridge
 A RESTful wrapper for namesystem/blockstore. Allows blockstore operations via HTTP endpoints.
 
-# Prerequisites
+## Prerequisites
 - Ruby
 - Bundler
 - Blockstore (installed and running)
 
-## Installation
+## Installation & running
 - Clone the repo
 - Run `bundler install` to install gem dependencies
 - Once dependencies installed, run `rackup` to start the rack web server (will start on localhost:9000 by default)
