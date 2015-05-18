@@ -12,7 +12,7 @@ module Sinatra
           BlockStoreService.new.get_cli_info
         rescue BridgeError => e
           LOGGER.error "Error processing request! || Error: #{e.message}"
-          status 400
+          status 500
           return e.message.to_json
         end
       end
@@ -23,7 +23,7 @@ module Sinatra
           BlockStoreService.new.lookup(name)
         rescue BridgeError => e
           LOGGER.error "Error processing request! || Error: #{e.message}"
-          status 400
+          status 500
           return e.message.to_json
         end
       end
@@ -49,7 +49,7 @@ module Sinatra
           BlockStoreService.new.preorder_name(name)
         rescue BridgeError => e
           LOGGER.error "Error processing request! || Error: #{e.message}"
-          status 400
+          status 500
           return e.message.to_json
         end
       end
@@ -75,7 +75,7 @@ module Sinatra
           BlockStoreService.new.register(name)
         rescue BridgeError => e
           LOGGER.error "Error processing request! || Error: #{e.message}"
-          status 400
+          status 500
           return e.message.to_json
         end
       end
@@ -102,7 +102,7 @@ module Sinatra
           BlockStoreService.new.update_data_for_name(name, name_data)
         rescue BridgeError => e
           LOGGER.error "Error processing request! || Error: #{e.message}"
-          status 400
+          status 500
           return e.message.to_json
         end
       end
@@ -111,7 +111,7 @@ module Sinatra
         content_type :json
 
         # Payload:
-        # {"name":"", "new_owner":""}
+        # {"name":"", "address":""}
 
         body = request.body.read
 
@@ -129,7 +129,7 @@ module Sinatra
           BlockStoreService.new.transfer(name, address)
         rescue BridgeError => e
           LOGGER.error "Error processing request! || Error: #{e.message}"
-          status 400
+          status 500
           return e.message.to_json
         end
       end
